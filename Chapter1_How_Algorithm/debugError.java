@@ -26,5 +26,6 @@ public class debugError {
                 System.out.println(testcase + " " + answer);
             }
         }
+        sc.close();
     }
 }
