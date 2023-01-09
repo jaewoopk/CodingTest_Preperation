@@ -1,4 +1,4 @@
-package Chapter2_Data_Structure;
+package Chapter3_prefixSum;
 
 import java.util.Scanner;
 
