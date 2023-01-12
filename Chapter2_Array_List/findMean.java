@@ -1,4 +1,4 @@
-package Chapter2_Data_Structure;
+package Chapter2_Array_List;
 
 import java.util.Scanner;
 
