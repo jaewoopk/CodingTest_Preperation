@@ -25,7 +25,6 @@ public class selectSort {
             char tmp = chArr[i];
             chArr[i] = chArr[idx];
             chArr[idx] = tmp;
-
         }
 
         for (var e : chArr) {
