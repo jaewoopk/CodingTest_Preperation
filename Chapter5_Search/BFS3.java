@@ -10,7 +10,27 @@ public class BFS3 {
     static LinkedList<Node>[] arr;
     static Queue<Node> queue;
     static boolean visited[];
+    static long max;
+
     static void bfs3() {
+        Node beforeNode = arr[1].peek();
+        queue.add(beforeNode);
+        visited[beforeNode.e] = true;
+
+        while(!queue.isEmpty()) {
+            Node p = queue.poll();
+            for (var node : arr[p.e]) {
+                if (!visited[node.e]) {
+                    queue.add(node);
+                    node.sum += (beforeNode.sum + node.r);
+                    beforeNode = node;
+                    visited[node.e] = true;
+                    if (max < node.sum) {
+                        max = node.sum;
+                    }
+                }
+            }
+        }
     }
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,9 +39,10 @@ public class BFS3 {
         int n;
         n = Integer.parseInt(st.nextToken());
         arr = new LinkedList[n + 1];
+        visited = new boolean[n + 1];
         queue = new LinkedList<>();
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n + 1; i++) {
             visited[i] = false;
             st = new StringTokenizer(br.readLine());
             int num;
@@ -40,13 +61,16 @@ public class BFS3 {
             }
         }
         bfs3();
+        System.out.println(max);
     }
     static class Node {
         int e;
         int r;
+        int sum;
         Node(int e, int r) {
             this.e = e;
             this.r = r;
+            this.sum = 0;
         }
     }
 }
