@@ -59,9 +59,6 @@ public class BinarySearch {
                 bw.write("0\n");
             }
         }
-
-
         bw.close();
-
     }
 }
