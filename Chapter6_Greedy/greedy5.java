@@ -16,7 +16,9 @@ public class greedy5 {
             if (i == 0) {
                 answer += tmp;
             }
-            answer -= tmp;
+            else {
+                answer -= tmp;
+            }
         }
         System.out.println(answer);
         
