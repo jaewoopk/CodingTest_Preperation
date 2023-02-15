@@ -7,7 +7,7 @@ public class Q1 {
         Scanner sc = new Scanner(System.in);
         int n;
         n = sc.nextInt();
-        int[] arr = new int[1000001];
+        int[] arr = new int[n + 4];
 
         arr[1] = 0;
         arr[2] = 1;
