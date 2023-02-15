@@ -22,7 +22,7 @@ public class Q8 {
         v = Integer.parseInt(st.nextToken());
         
         arr = new ArrayList[n + 1];
-        q = new LinkedList<>();
+        q = new LinkedList<Integer>();
 
         for (int i = 1; i < n + 1; i++) {
             arr[i] = new ArrayList<>();
