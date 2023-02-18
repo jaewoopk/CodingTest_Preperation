@@ -8,7 +8,7 @@ public class Q13 {
 
         int n = sc.nextInt();
 
-        int[] arr = new int[11];
+        int[] arr = new int[15];
         int[] dp = new int[n + 1];
 
         dp[1] = 10;
