@@ -22,12 +22,10 @@ public class Q12 {
         for (int i = 1; i < n + 1; i++) {
             st = new StringTokenizer(br.readLine());
             arr[i] = Integer.parseInt(st.nextToken());
-            for (int j = arr[i]; j <= k; j++) {
+            for (int j = arr[i]; j < k + 1; j++) {
                 dp[j] += dp[j - arr[i]];
             }
         }
         System.out.println(dp[k]);
-
     }
-
 }
