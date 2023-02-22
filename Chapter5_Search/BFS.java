@@ -22,7 +22,7 @@ public class BFS {
             int i = 0;
             System.out.print(p + " ");
             while (i < arr[p].size()) {
-                if (visited[arr[p].get(i)] == false) {
+                if (!visited[arr[p].get(i)]) {
                     queue.add(arr[p].get(i));
                     visited[arr[p].get(i)] = true;
                 }
@@ -34,11 +34,10 @@ public class BFS {
     static void dfs(int idx) {
         visited[idx] = true;
         for (int i = 0; i < arr[idx].size(); i++) {
-            if (visited[arr[idx].get(i)] == true) {
-                continue ;
+            if (!visited[arr[idx].get(i)]) {
+                System.out.print(arr[idx].get(i) + " ");
+                dfs(arr[idx].get(i));   
             }
-            System.out.print(arr[idx].get(i) + " ");
-            dfs(arr[idx].get(i));
         }
     }
     public static void main(String[] args) throws IOException{
