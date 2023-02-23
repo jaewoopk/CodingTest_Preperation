@@ -6,7 +6,6 @@ public class Q3 {
     class Solution {
         public String solution(String s) {
 
-            Deque q = new PriorityQueue<>();
             String answer = "";
             int max = Integer.MIN_VALUE;
             int min = Integer.MAX_VALUE;
