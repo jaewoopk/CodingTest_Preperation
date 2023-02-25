@@ -1,7 +1,5 @@
 package TestProgrammers;
 
-import java.util.*;
-
 class Solution {
     public String solution(String[] seoul) {
         String answer = "";
@@ -13,7 +11,7 @@ class Solution {
             }
         }
         answer = "김서방은 " + Integer.toString(idx) + "에 있다";
-        return answer;
-        
+        answer = Integer.toString(idx);
+        return answer;   
     }
 }
