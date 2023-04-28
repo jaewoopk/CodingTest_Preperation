@@ -1,4 +1,4 @@
-package Programmers_Question;
+package SoftwareMaestro.SoftwareMaestro_Preperation;
 
 public class Question2 {
     public static void main(String[] args) {

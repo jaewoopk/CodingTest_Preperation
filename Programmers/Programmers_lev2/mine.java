@@ -6,10 +6,10 @@ public class mine {
     }
 }
 
-class Solution {
-    public int solution(int[] picks, String[] minerals) {
-        int answer = 0;
+// class Solution {
+//     public int solution(int[] picks, String[] minerals) {
+//         int answer = 0;
         
-        return answer;
-    }
-}
+//         return answer;
+//     }
+// }
