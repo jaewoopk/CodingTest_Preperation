@@ -11,13 +11,13 @@ public class correctBracket extends Solution5{
 
 class Solution5 {
     public static boolean solution5(String s) {
-        String[] str = s.split("");
-        Stack<String> stack = new Stack<String>();
+        if (s.length() % 2 == 1 || s.charAt(0) == ')') return false;
+        Stack<Character> stack = new Stack<Character>();
         
-        for (String e : str) {
-            if (e.equals("(")) stack.add("(");
-            else if (e.equals(")") && stack.isEmpty()) return false;
-            else if (e.equals(")") && stack.peek().equals("(")) stack.pop();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') stack.add('(');
+            else if ((s.charAt(i) == ')') && stack.isEmpty()) return false;
+            else if ((s.charAt(i) == ')') && stack.peek().equals('(')) stack.pop();
         }
         if (!stack.empty())
             return false;
