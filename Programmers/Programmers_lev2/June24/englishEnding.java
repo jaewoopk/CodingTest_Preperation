@@ -49,3 +49,33 @@ class Solution624_1 {
         return answer;
     }
 }
+
+// import java.util.HashSet;
+// import java.util.Set;
+
+// public class EnglishWordChain {
+// 	public static void main(String[] args) {
+// 	    String[] words1 = {"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
+// 	    String[] words2 = {"hello", "observe", "effect", "take", "either", "recognize", "encourage", "ensure", "establish", "hang", "gather", "refer", "reference", "estimate", "executive"};
+// 	    String[] words3 = {"hello", "one", "even", "never", "now", "world", "draw"};
+	
+// 	    System.out.println(solution(3, words1)[0] + " " + solution(3, words1)[1]);
+// 	    System.out.println(solution(5, words2)[0] + " " + solution(5, words2)[1]);
+// 	    System.out.println(solution(2, words3)[0] + " " + solution(2, words3)[1]);
+// 	}
+// }
+// public static int[] solution(int n, String[] words) {
+//     Set<String> usedWords = new HashSet<>();
+//     usedWords.add(words[0]);
+
+//     for (int i = 1; i < words.length; i++) {
+//         if (usedWords.contains(words[i]) || words[i].charAt(0) != words[i - 1].charAt(words[i - 1].length() - 1)) {
+//             return new int[]{(i % n) + 1, (i / n) + 1};
+//         }
+//         usedWords.add(words[i]);
+//     }
+
+//     return new int[]{0, 0};
+// }
+// HashSet을 이용해 중복 처리 및 words[i].charAt()을 통해 String을 파싱합니다.
+// if 문에 바로 return을 걸어 if문에 걸리지 않을 경우 int[]{0,0}을 리턴합니다.
