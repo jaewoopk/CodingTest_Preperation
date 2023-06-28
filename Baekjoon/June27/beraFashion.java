@@ -12,7 +12,7 @@ public class beraFashion {
             System.out.println(0);
         }
         else {
-            System.out.println(n * n - 1);
+            System.out.println(n * (n - 1));
         }
 
         sc.close();
