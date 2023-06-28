@@ -52,3 +52,33 @@ class Solution628_2 {
 //         return k / count;
 //     }
 // }
+
+// import java.util.HashMap;
+
+// public class SimpleSolution {
+//     public static int solution(int k, int[] tangerine) {
+//         HashMap<Integer, Integer> windowCounts = new HashMap<>();
+//         int uniqueCount = 0, minUniqueCount = Integer.MAX_VALUE;
+
+//         for (int i = 0; i < tangerine.length; i++) {
+//             windowCounts.put(tangerine[i], windowCounts.getOrDefault(tangerine[i], 0) + 1);
+//             if (windowCounts.get(tangerine[i]) == 1) uniqueCount++;
+
+//             if (i >= k) {
+//                 int left = tangerine[i - k];
+//                 windowCounts.put(left, windowCounts.get(left) - 1);
+//                 if (windowCounts.get(left) == 0) uniqueCount--;
+//             }
+
+//             if (i >= k - 1) minUniqueCount = Math.min(minUniqueCount, uniqueCount);
+//         }
+
+//         return minUniqueCount;
+//     }
+
+//     public static void main(String[] args) {
+//         System.out.println(solution(6, new int[]{1, 3, 2, 5, 4, 5, 2, 3}));
+//         System.out.println(solution(4, new int[]{1, 3, 2, 5, 4, 5, 2, 3}));
+//         System.out.println(solution(2, new int[]{1, 1, 1, 1, 2, 2, 2, 3}));
+//     }
+// }
