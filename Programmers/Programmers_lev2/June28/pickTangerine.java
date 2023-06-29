@@ -2,8 +2,8 @@ package Programmers_lev2.June28;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
+// import java.util.List;
+// import java.util.stream.Collectors;
 
 public class pickTangerine {
     public static void main(String[] args) {
@@ -53,32 +53,26 @@ class Solution628_2 {
 //     }
 // }
 
-// import java.util.HashMap;
+// class Solution {
+//     public int solution(int k, int[] tangerine) {
+//         int answer = 0;
+//         HashMap<Integer,Integer> map =new HashMap<>();
 
-// public class SimpleSolution {
-//     public static int solution(int k, int[] tangerine) {
-//         HashMap<Integer, Integer> windowCounts = new HashMap<>();
-//         int uniqueCount = 0, minUniqueCount = Integer.MAX_VALUE;
-
-//         for (int i = 0; i < tangerine.length; i++) {
-//             windowCounts.put(tangerine[i], windowCounts.getOrDefault(tangerine[i], 0) + 1);
-//             if (windowCounts.get(tangerine[i]) == 1) uniqueCount++;
-
-//             if (i >= k) {
-//                 int left = tangerine[i - k];
-//                 windowCounts.put(left, windowCounts.get(left) - 1);
-//                 if (windowCounts.get(left) == 0) uniqueCount--;
-//             }
-
-//             if (i >= k - 1) minUniqueCount = Math.min(minUniqueCount, uniqueCount);
+//         for (int t : tangerine) {
+//             map.put(t, map.getOrDefault(t, 0) + 1);
 //         }
 
-//         return minUniqueCount;
-//     }
+//         List<Integer> list = new ArrayList<>(map.keySet());
+//         list.sort((o1, o2) -> map.get(o2)-map.get(o1));
 
-//     public static void main(String[] args) {
-//         System.out.println(solution(6, new int[]{1, 3, 2, 5, 4, 5, 2, 3}));
-//         System.out.println(solution(4, new int[]{1, 3, 2, 5, 4, 5, 2, 3}));
-//         System.out.println(solution(2, new int[]{1, 1, 1, 1, 2, 2, 2, 3}));
+//         for(Integer key:list){
+//             k -=map.get(key);
+//             answer++;
+//             if(k<=0){
+//                 break;
+//             }
+//         }
+
+//         return answer;
 //     }
 // }
