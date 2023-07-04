@@ -113,3 +113,55 @@ class Solution703_1 {
 //         return false;
 //     }
 // }
+
+
+// import java.util.LinkedList;
+
+// public class Solution {
+//     public static void main(String[] args) {
+//         // Test cases
+//     }
+
+//     public int solution(int cacheSize, String[] cities) {
+//         Cache cache = new Cache(cacheSize);
+
+//         int totalTime = 0;
+//         for (String city : cities) {
+//             if (cache.isInCache(city.toLowerCase())) {
+//                 totalTime += 1; // cache hit
+//             } else {
+//                 totalTime += 5; // cache miss
+//             }
+//         }
+
+//         return totalTime;
+//     }
+// }
+
+// class Cache {
+//     private final int size;
+//     private final LinkedList<String> storage;
+
+//     public Cache(int size) {
+//         this.size = size;
+//         this.storage = new LinkedList<>();
+//     }
+
+//     public boolean isInCache(String city) {
+//         if (size == 0) {
+//             return false;
+//         }
+
+//         if (storage.contains(city)) {
+//             storage.remove(city);
+//             storage.addFirst(city);
+//             return true;
+//         } else {
+//             if (storage.size() == size) {
+//                 storage.removeLast();
+//             }
+//             storage.addFirst(city);
+//             return false;
+//         }
+//     }
+// }
