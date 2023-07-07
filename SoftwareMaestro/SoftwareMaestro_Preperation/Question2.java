@@ -2,15 +2,15 @@ package SoftwareMaestro.SoftwareMaestro_Preperation;
 
 public class Question2 {
     public static void main(String[] args) {
-
+        Solution.solution(args);
     }
 }
 
 // 일일이 하나하나 대조를 해야하는 것 같다.
 class Solution {
-    public char[][] answerBoard;
+    public static char[][] answerBoard;
 
-    public int findWinning(char c) {
+    public static int findWinning(char c) {
         int game = 0;
         for(int i = 0; i < 3; i++) {
             if (answerBoard[i][0] == c &&
@@ -32,7 +32,7 @@ class Solution {
             game++;
         return game;
     }
-    public int solution(String[] board) {
+    public static int solution(String[] board) {
         int answer = 1;
         answerBoard = new char[3][3];
         int oCnt = 0;
