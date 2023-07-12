@@ -9,15 +9,14 @@ public class Q1182_sumArray {
     static int n,s,count;
     static int[] arr;
     static boolean[] visited;
-    public static void dfs(int idx) {
+    public static void backtracking(int sum, int idx) {
         if (sum == s) {
             count++;
-            return ;
         }
-        for (int i = 0; i < n; i++) {
+        for (int i = idx; i < n; i++) {
             if (!visited[i]) {
                 visited[i] = true;
-                dfs(sum + arr[i]);
+                backtracking(sum + arr[i], i);
                 visited[i] = false;
             }
         }
@@ -36,9 +35,8 @@ public class Q1182_sumArray {
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        for (int i = 0; i < n; i++) {
-            dfs(i);
-        }
+        backtracking(0, 0);
+        if (s == 0) count--;
         System.out.println(count);
     }
 }
