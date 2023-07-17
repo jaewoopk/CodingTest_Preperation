@@ -9,6 +9,10 @@ public class Q_10974_permutation {
     
     public static boolean isVisit() {
         for (var e : visited) {
+            System.out.print(e + " ");
+        }
+        System.out.println();
+        for (var e : visited) {
             if (!e) return false;
         }
         return true;

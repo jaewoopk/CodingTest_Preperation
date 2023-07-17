@@ -13,8 +13,8 @@ public class Q2606_virus {
         if (!map.containsKey(key)) {
             return ;
         }
-        for (var e : map.get(key)) {
-            if (!visited[e.intValue()]) {
+        for (int e : map.get(key)) {
+            if (!visited[e]) {
                 dfs(e);
                 count++;
             }
@@ -33,6 +33,7 @@ public class Q2606_virus {
             int value = sc.nextInt();
             ArrayList<Integer> list1;
             ArrayList<Integer> list2;
+            //map.computeIfAbsent(key, vlaue)
             if (!map.containsKey(key)) {
                 list1 = new ArrayList<>();
             }
