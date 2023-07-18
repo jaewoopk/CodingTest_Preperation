@@ -48,7 +48,7 @@ public class Q2667_numAttatch {
         map = new int[n][n];
         visited = new boolean[n][n];
         list = new ArrayList<>();
-
+        
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             map[i] = Arrays.stream(st.nextToken().split("")).mapToInt(Integer::parseInt).toArray();
