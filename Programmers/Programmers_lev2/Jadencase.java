@@ -2,7 +2,7 @@ package Programmers_lev2;
 
 public class Jadencase extends Solution{
     public static void main(String[] args) {
-        System.out.println(solution("3people unFollowed me"));
+        System.out.println(Solution2.solution("3people unFollowed me"));
     }
 }
 
@@ -15,7 +15,7 @@ public class Jadencase extends Solution{
 // 2. flag를 통해 true일 경우 대문자화하여 더하고, 그렇지 않으면 그냥 더한다.
 // 3. flag를 e.equals(" ")를 통해 띄어쓰기와 대조하고, 띄어쓰기 일경우 true, 아닐 경우 false를 반환한다.
 
-class Solution {
+class Solution2 {
     public static String solution(String s) {
         String answer = "";
         String[] str = s.toLowerCase().split("");

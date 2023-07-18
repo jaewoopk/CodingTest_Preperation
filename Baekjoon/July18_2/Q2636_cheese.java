@@ -1,10 +1,11 @@
-package Baekjoon.July18;
+package Baekjoon.July18_2;
 
 import java.util.*;
 import java.io.*;
 
-public class Q2636_Cheese {
+public class Q2636_cheese {
     static int eraseCount;
+    static int beforeCount;
     static int rotateCount;
     static int n, m;
     static int[][] map;
@@ -56,17 +57,18 @@ public class Q2636_Cheese {
         map = new int[n][m];
         visited = new boolean[n][m];
         for (int i = 0; i < n; i++) {
-            st = new StringTokenizer(br.readLine());
-            map[i] = Arrays.stream(st.nextToken().split(" ")).mapToInt(Integer::parseInt).toArray();
+            //st = new StringTokenizer(br.readLine());
+            map[i] = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
         }
 
         eraseCount = bfs(0, 0);
         while (eraseCount > 0) {
             rotateCount++;
-            eraseCount = bfs(0, 0);
             visitedReset();
+            beforeCount = eraseCount;
+            eraseCount = bfs(0, 0);
         }
-        System.out.println(eraseCount + "\n" + rotateCount);
+        System.out.println(rotateCount + "\n" + beforeCount);
     }
 }
 

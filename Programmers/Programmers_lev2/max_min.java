@@ -2,8 +2,8 @@ package Programmers_lev2;
 
 public class max_min extends Solution{
     public static void main(String[] args) {
-        System.out.println(solution("1 2 3 4"));
-        System.out.println(solution("-1 -2 -3 -4"));
+        System.out.println(Solution3.solution("1 2 3 4"));
+        System.out.println(Solution3.solution("-1 -2 -3 -4"));
     }
 }
 
@@ -23,7 +23,7 @@ public class max_min extends Solution{
 
 
 
-class Solution {
+class Solution3 {
     public static String solution(String s) {
         String answer = "";
         String[] arr = s.split(" ");

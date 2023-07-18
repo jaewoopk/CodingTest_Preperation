@@ -6,7 +6,7 @@ public class Question1 extends Solution{
         n = 8;
         m = 4;
         int[] section = {2,3,6};
-        System.out.println(solution(n,m,section));
+        System.out.println(Solution3.solution(n,m,section));
     }
 }
 
@@ -37,7 +37,7 @@ public class Question1 extends Solution{
 // }
 
 
-class Solution {
+class Solution3 {
     public static int solution(int n, int m, int[] section) {
         int maxValue = 0, answer = 0;
         for (int e : section) {

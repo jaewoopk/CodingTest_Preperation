@@ -2,12 +2,12 @@ package SoftwareMaestro.SoftwareMaestro_Preperation;
 
 public class Question2 {
     public static void main(String[] args) {
-        Solution.solution(args);
+        Solution2.solution(args);
     }
 }
 
 // 일일이 하나하나 대조를 해야하는 것 같다.
-class Solution {
+class Solution2 {
     public static char[][] answerBoard;
 
     public static int findWinning(char c) {

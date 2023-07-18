@@ -2,6 +2,7 @@ package Baekjoon.July18;
 
 import java.util.*;
 import java.io.*;
+import java.io.BufferedReader;
 
 public class Q2178_mazeSearch {
     static int n, m;
