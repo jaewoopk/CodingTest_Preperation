@@ -57,7 +57,6 @@ public class Q2636_cheese {
         map = new int[n][m];
         visited = new boolean[n][m];
         for (int i = 0; i < n; i++) {
-            //st = new StringTokenizer(br.readLine());
             map[i] = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
         }
 
