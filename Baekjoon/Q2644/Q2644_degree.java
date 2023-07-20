@@ -1,36 +1,32 @@
 package Baekjoon.Q2644;
 
 import java.util.*;
-import java.io.*;
 
 public class Q2644_degree {
     static int n, m;
     static int num1, num2;
+    static int count;
     static HashMap<Integer, LinkedList<Integer>> map;
     static boolean[] visited;
 
-    public static int bfs(int start, int end) {
-        Queue<Integer> q = map.getOrDefault(start, new LinkedList<Integer>());
-        visited[start] = true;
-        int count = 0;
-
-        while (!q.isEmpty()) {
-            int e = q.poll();
+    public static void dfs(int num, int idx) {
+        if (num == num2) {
+            count = idx;
+            return ;
+        }
+        visited[num] = true;
+        if (map.getOrDefault(num, null) == null) {
+            return ;
+        }
+        for (int e : map.get(num)) {
             if (!visited[e]) {
                 visited[e] = true;
-                LinkedList<Integer> list = map.getOrDefault(e, null);
-                count++;
-                for (int s : list) {
-                    if (visited[s]) {
-                        count--;
-                    }
-                }
+                dfs(e, idx + 1);
             }
-            if (e == end) return count;
         }
-        return -1;
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         map = new HashMap<>();
@@ -48,7 +44,9 @@ public class Q2644_degree {
             map.computeIfAbsent(value, k -> new LinkedList<>()).add(key);
         }
 
-        System.out.println(bfs(num1, num2));
+        dfs(num1, 1);
+        if (count == 0) System.out.println(-1);
+        else System.out.println(count - 1);
         sc.close();
     }
 }
