@@ -15,18 +15,17 @@ class Solution {
         HashMap<String, Integer> map = new HashMap<>();
 
         for (int i = 0; i < discount.length - 9; i++) {
-            int len = 0;
             boolean isRight = true;
+            int len = 0;
             for (int j = 0; j < number.length; j++) {
-                map.put(want[j], number[j]);
                 len += number[j];
+                map.put(want[j], number[j]);
             }
             for (int j = i; j < i + len; j++) {
                 if (map.containsKey(discount[j])) {
                     map.replace(discount[j], map.get(discount[j]) - 1);
-                }
-                else {
-                    break ;
+                } else {
+                    break;
                 }
             }
 
