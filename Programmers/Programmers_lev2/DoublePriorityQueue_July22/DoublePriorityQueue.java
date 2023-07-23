@@ -33,7 +33,7 @@ class Solution {
                         int max = revPq.poll();
                         pq.remove(max);
                     } else {
-                        int min = pq.poll();
+                        int min = pq.poll() ;
                         revPq.remove(min);
                     }
                 }
