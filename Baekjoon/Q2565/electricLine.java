@@ -21,13 +21,19 @@ public class electricLine {
 
         int comparison = 0;
         int count = 0;
+        int max = 0;
         for (int e : list) {
-            if (comparison > map.get(e)) {
+            if (comparison < map.get(e)) {
                 count++;
+            } else {
+                count = 1;
+            }
+            if (max < count) {
+                max = count;
             }
             comparison = map.get(e);
         }
-        System.out.println(count + 1);
+        System.out.println(n - max);
 
     }
 }
