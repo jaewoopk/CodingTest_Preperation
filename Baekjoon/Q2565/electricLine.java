@@ -11,29 +11,21 @@ public class electricLine {
 
         int n = Integer.parseInt(st.nextToken());
 
-        for (int i = 1; i < n + 1; i++) {
+        for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             map.put(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
         }
 
-        List<Integer> list = new LinkedList<>(map.keySet());
+        List<Integer> list = new ArrayList<>(map.keySet());
         Collections.sort(list);
 
-        int comparison = 0;
-        int count = 0;
-        int max = 0;
-        for (int e : list) {
-            if (comparison < map.get(e)) {
-                count++;
-            } else {
-                count = 1;
+        int[][] dp = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                dp[i][j] =
             }
-            if (max < count) {
-                max = count;
-            }
-            comparison = map.get(e);
         }
-        System.out.println(n - max);
 
     }
 }
