@@ -23,7 +23,7 @@ public class electricLine {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                dp[i][j] =
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
             }
         }
 
