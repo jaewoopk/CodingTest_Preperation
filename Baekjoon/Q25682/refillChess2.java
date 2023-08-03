@@ -55,7 +55,5 @@ public class refillChess2 {
             }
             System.out.println();
         }
-
-
     }
 }
