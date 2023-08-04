@@ -53,6 +53,7 @@ public class refillChess2 {
             for (int j = 0; j < m + 2; j++) {
                 System.out.print(sumBoard[i][j] + " ");
             }
+
             System.out.println();
         }
     }
