@@ -1,7 +1,21 @@
+/**
+ *  [ 효율성 ]
+ *  - 메모리: 14264KB
+ *  - 시간 : 124ms
+ */
+
 package Baekjoon.Q16953;
 
 import java.util.*;
 import java.io.*;
+
+/*
+ * 1. a,b를 입력받습니다.
+ * 2. solution(long a, long b, int count) 함수를 재귀로 돌립니다.
+ * 3. a > b 보다 커질 경우, 재귀를 멈추고 같을 경우 min 값과 비교해 min값을 갱신합니다.
+ * 4. 재귀함수는 스택형태로 쌓이기 때문에 마지막 min값을 리턴해줍니다.
+ */
+
 
 public class AtoB {
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
