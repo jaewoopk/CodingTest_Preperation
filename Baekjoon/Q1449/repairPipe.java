@@ -1,3 +1,10 @@
+/**
+ *  [ 효율성 ]
+ *  - 메모리: 14620KB
+ *  - 시간 : 128ms
+ */
+
+
 package Baekjoon.Q1449;
 
 import java.util.*;
@@ -45,6 +52,16 @@ public class repairPipe {
 
         bw.flush();
 
+//        int tapes = 0;
+//        int end = 0;
+//        for (int i = 0; i < n; i++) {
+//            if (arr[i] > end) {
+//                tapes++;
+//                end = arr[i] + l - 1;
+//            }
+//        }
+//
+//        System.out.println(tapes);
     }
 
 }
