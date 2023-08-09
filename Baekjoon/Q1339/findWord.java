@@ -29,7 +29,6 @@ public class findWord {
 
         list.sort(Collections.reverseOrder());
 
-        System.out.println(list.toString());
         int ans = 0;
         int num = 9;
         for (int val : list) {
