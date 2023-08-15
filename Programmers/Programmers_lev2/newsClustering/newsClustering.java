@@ -72,3 +72,44 @@ class Solution {
         return (hList.size() == 0 && gList.size() == 0) ? 65536 : (int)(65536 * ((double)gList.size() / (double)hList.size()));
     }
 }
+
+
+//package Programmers_lev2.newsClustering;
+//
+//        import java.util.*;
+//
+//public class newsClustering {
+//    public static void main(String[] args) {
+//        System.out.println(Solution.solution("handshake","shake hands"));
+//    }
+//}
+//
+//class Solution {
+//    public static int solution(String str1, String str2) {
+//        List<String> list1 = getTwoLetterWords(str1.toLowerCase());
+//        List<String> list2 = getTwoLetterWords(str2.toLowerCase());
+//
+//        int intersection = 0;
+//        for (String word : new ArrayList<>(list1)) {
+//            if (list2.remove(word)) {
+//                list1.remove(word);
+//                intersection++;
+//            }
+//        }
+//
+//        int union = list1.size() + list2.size() + intersection;
+//
+//        return union == 0 ? 65536 : (int) (65536 * (double) intersection / union);
+//    }
+//
+//    private static List<String> getTwoLetterWords(String word) {
+//        List<String> list = new ArrayList<>();
+//        for (int i = 0; i < word.length() - 1; i++) {
+//            String twoLetterWord = word.substring(i, i + 2);
+//            if (twoLetterWord.matches("[a-z]{2}")) {
+//                list.add(twoLetterWord);
+//            }
+//        }
+//        return list;
+//    }
+//}
