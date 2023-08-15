@@ -13,9 +13,6 @@ class Solution {
     static boolean[] visited;
     public static void findMaxCount(int k, int[][] dungeons, int idx) {
         max = Math.max(max, idx);
-        if (idx >= dungeons.length) {
-            return;
-        }
 
         for (int i = 0; i < dungeons.length; i++) {
             if (!visited[i] && k >= dungeons[i][0]) {
