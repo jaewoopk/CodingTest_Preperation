@@ -76,7 +76,7 @@ class Solution {
 
 //package Programmers_lev2.newsClustering;
 //
-//        import java.util.*;
+//import java.util.*;
 //
 //public class newsClustering {
 //    public static void main(String[] args) {
