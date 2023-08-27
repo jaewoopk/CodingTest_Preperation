@@ -27,6 +27,7 @@ class Solution {
         if (pq.isEmpty()) {
             return -1;
         }
+
         return answer;
     }
 }
