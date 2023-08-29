@@ -1,10 +1,23 @@
 package Programmers_lev2.Curse3;
 
-import java.util.ArrayList;
-
 public class curse3 {
     public static void main(String[] args) {
-        System.out.println(Solution.solution(90));
+        System.out.println(Solution.solution(40));
+    }
+}
+
+class Solution {
+    public static int solution(int n) {
+        int[] arr = new int[101];
+        int num = 1;
+        for (int i = 1; i < n + 1; i++) {
+            while (num % 3 == 0 || Integer.toString(num).contains("3")) {
+                num++;
+            }
+            arr[i] = num;
+            num++;
+        }
+        return arr[n];
     }
 }
 // 첫 번째 풀이
