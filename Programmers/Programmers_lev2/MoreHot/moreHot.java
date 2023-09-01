@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 public class moreHot {
     public static void main(String[] args) {
         System.out.println(Solution.solution(new int[] {1,2,3,9,10,12},7));
+        System.out.println(Solution.solution(new int[] {1,2,3,9,10,12},10000));
     }
 }
 
@@ -16,16 +17,23 @@ class Solution {
                 .stream(scoville)
                 .boxed()
                 .collect(Collectors.toList()));
-        int answer = 1;
-        int hot = pq.poll() + (pq.poll() * 2);
+        int answer = 0;
+        int len = pq.size();
+        int pk = pq.peek();
 
-        while (hot < K && !pq.isEmpty()) {
+        while (answer <= len && pk < K && pq.size() > 1) {
+            //System.out.println(pq.toString());
+            int hot = pq.poll() + (pq.poll() * 2);
             pq.add(hot);
-            hot = pq.poll() + (pq.poll() * 2);
+            pk = pq.peek();
             answer++;
         }
-        if (pq.isEmpty()) {
-            return -1;
+        if (pq.size() == 1) {
+            if (pq.peek() > K) {
+                return answer;
+            } else {
+                return -1;
+            }
         }
 
         return answer;
