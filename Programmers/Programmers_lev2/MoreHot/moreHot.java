@@ -39,3 +39,23 @@ class Solution {
         return answer;
     }
 }
+
+//class Solution {
+//    public static int solution(int[] scoville, int K) {
+//        PriorityQueue<Integer> pq = new PriorityQueue<>(Arrays
+//                .stream(scoville)
+//                .boxed()
+//                .collect(Collectors.toList()));
+//
+//        int answer = 0;
+//        while (pq.peek() < K) {
+//            if (pq.size() < 2) return -1;  // 2개 이하면 더 이상 조합 불가능
+//
+//            int mixed = pq.poll() + pq.poll() * 2;
+//            pq.add(mixed);
+//            answer++;
+//        }
+//
+//        return answer;
+//    }
+//}
