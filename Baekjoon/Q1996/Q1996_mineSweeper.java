@@ -1,4 +1,4 @@
-package Baekjoon.July6;
+package Baekjoon.Q1996;
 
 import java.util.*;
 import java.awt.Point;

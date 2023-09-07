@@ -1,4 +1,4 @@
-package Baekjoon.July12;
+package Baekjoon.Q2606;
 
 import java.util.ArrayList;
 import java.util.HashMap;

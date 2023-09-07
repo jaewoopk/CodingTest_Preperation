@@ -1,4 +1,4 @@
-package Baekjoon.July18;
+package Baekjoon.Q2178;
 
 import java.util.*;
 import java.io.*;

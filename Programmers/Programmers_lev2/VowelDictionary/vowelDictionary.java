@@ -33,7 +33,7 @@ class Solution {
         while (word.length() < 5) {
             word += " ";
         }
-
+        
         char[] answer = new char[5];
         str = new Character[5];
         dic = new Character[3906][5];

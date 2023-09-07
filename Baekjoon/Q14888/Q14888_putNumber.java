@@ -1,4 +1,4 @@
-package Baekjoon.July12;
+package Baekjoon.Q14888;
 
 import java.util.Scanner;
 

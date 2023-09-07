@@ -4,7 +4,7 @@
  *  - 시간 : 140ms
  */
 
-package Baekjoon.July6;
+package Baekjoon.Q1021;
 
 import java.util.*;
 import java.util.stream.*;

@@ -1,4 +1,4 @@
-package Baekjoon.July11;
+package Baekjoon.Q1182;
 
 import java.io.BufferedReader;
 import java.io.IOException;
