@@ -1,4 +1,4 @@
-package SWEA.D2;
+package SWEA.D2.Q1859;
 
 import java.util.*;
 import java.io.*;

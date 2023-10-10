@@ -1,4 +1,4 @@
-package SWEA.D2;
+package SWEA.D2.Q1926;
 
 import java.util.*;
 
