@@ -28,7 +28,6 @@ class Q2001 {
                 for (int j = 1; j < m + 1; j++) {
                     prefixSum[i][j] = board[i - 1][j - 1] + prefixSum[i][j - 1] + prefixSum[i - 1][j] - prefixSum[i -1][j - 1];
                 }
-                //System.out.println(Arrays.toString(prefixSum[i]));
             }
 
             for (int i = 1; i <= m - n + 1; i++) {
