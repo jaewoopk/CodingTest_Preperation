@@ -4,6 +4,7 @@ import java.util.*;
 import java.io.*;
 
 public class Q13460 {
+    // bfs를 파악했으면, 문제에서 주어지는 요구사항을 정확히 뽑아내고 아이패드에 작성할 것
     static class State {
         int rx, ry, bx, by, count;
 
