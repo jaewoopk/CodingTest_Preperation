@@ -8,6 +8,17 @@ public class Q2564 {
     static int[][] board;
     static int[] dx = {1, -1, 0, 0};
     static int[] dy = {0, 0, 1, -1};
+    public static int[] getDirections(int[] tmp) {
+        switch (tmp[0]) {
+            case 1:
+                return new int[] {0, tmp[1]};
+            case 2:
+                return new int[] {m, tmp[1]};
+            case 3:
+                return new int[] {tmp[1], 0};
+        }
+        return new int[] {tmp[1], n};
+    }
     public static void makeBoard(int x, int y) {
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
@@ -24,7 +35,9 @@ public class Q2564 {
                 int rx = tmp.direction + dx[i];
                 int ry = tmp.length + dy[i];
 
-                if (rx > -1 && rx < m + 1 && ry > -1 && ry < n + 1 && board[rx][ry] != -1 && board[rx][ry] == 0) {
+                if (rx > -1 && rx < m + 1
+                        && ry > -1 && ry < n + 1
+                        && board[rx][ry] == 0) {
                     board[rx][ry] += board[tmp.direction][tmp.length] + 1;
                     q.add(new Node(rx, ry));
                 }
@@ -48,43 +61,13 @@ public class Q2564 {
 
         for (int i = 0; i < shop; i++) {
             int[] tmp = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-            int x = 0, y = 0;
-            switch (tmp[0]) {
-                case 1:
-                    x = 0;
-                    y = tmp[1];
-                    break;
-                case 2:
-                    x = m;
-                    y = tmp[1];
-                    break;
-                case 3:
-                    x = tmp[1];
-                    y = 0;
-                    break;
-                case 4:
-                    x = tmp[1];
-                    y = n;
-                    break;
-            }
-            q.add(new Node(x, y));
+            tmp = getDirections(tmp);
+            q.add(new Node(tmp[0], tmp[1]));
         }
 
         int[] dongeun = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-
-        switch (dongeun[0]) {
-            case 1:
-                makeBoard(0, dongeun[1]);
-                break;
-            case 2:
-                makeBoard(m, dongeun[1]);
-                break;
-            case 3:
-                makeBoard(dongeun[1], 0);
-                break;
-            case 4:
-                makeBoard(dongeun[1], n);
-        }
+        dongeun = getDirections(dongeun);
+        makeBoard(dongeun[0], dongeun[1]);
 
         for (Node e : q) {
             sum += board[e.direction][e.length];
