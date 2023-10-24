@@ -1,9 +1,5 @@
 package Programmers_lev3.MazeEscapeOrder;
 
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
-
 public class mazeEscapeOrder2 {
     public static void main(String[] args) {
         //System.out.println(Solution2.solution(3,4,2,3,3,1,5));
