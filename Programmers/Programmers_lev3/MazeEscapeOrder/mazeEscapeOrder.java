@@ -6,14 +6,14 @@ import java.util.Queue;
 
 public class mazeEscapeOrder {
     public static void main(String[] args) {
-        //System.out.println(Solution.solution(3,4,2,3,3,1,5));
-        System.out.println(Solution.solution(2,2,1,1,2,2,2));
+        System.out.println(Solution.solution(3,4,2,3,3,1,5));
+        //System.out.println(Solution.solution(2,2,1,1,2,2,2));
     }
 }
 
 class Solution {
-    static int[] dx = {-1, 0, 1, 0};
-    static int[] dy = {0, -1, 0, 1};
+    static int[] dx = {1, 0, 0, -1};
+    static int[] dy = {0, -1, 1, 0};
     static int[][] board;
     public static boolean isCheck(int x, int y, int n, int m) {
         return x > -1 && x < n && y > -1 && y < m;
@@ -36,16 +36,16 @@ class Solution {
                     tmp.str = new String(pollQ.str);
                     switch (i) {
                         case 0 :
-                            tmp.str += "u";
+                            tmp.str += "d";
                             break;
                         case 1 :
                             tmp.str += "l";
                             break;
                         case 2 :
-                            tmp.str += "d";
+                            tmp.str += "r";
                             break;
                         case 3 :
-                            tmp.str += "r";
+                            tmp.str += "u";
                             break;
                     }
                     if (tmp.count == k && x == end.x && y == end.y) {
@@ -58,8 +58,8 @@ class Solution {
 
             }
         }
-        return pq.poll();
         //System.out.println(pq.toString());
+        return pq.poll();
     }
 
     public static String solution(int n, int m, int x, int y, int r, int c, int k) {
