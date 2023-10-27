@@ -8,6 +8,10 @@ public class mazeEscapeOrder2 {
 }
 
 class Solution2 {
+    /**
+     * down, left, right, up순으로 확인합니다. (사전순으로 d,l,r,u 순이기 때문에)
+     * 사전순으로 가장 빠르며, k를 통해 end point에 도달할 수 있는 단 하나의 방법만 찾는 것을 목표로 합니다.
+     * */
     static int[] dx = {1, 0, 0, -1};
     static int[] dy = {0, -1, 1, 0};
     public static boolean isCheck(int x, int y, int n, int m) {
