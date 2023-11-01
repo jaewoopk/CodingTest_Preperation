@@ -12,27 +12,24 @@ public class Q13549 {
         n = Integer.parseInt(st.nextToken());
         k = Integer.parseInt(st.nextToken());
 
-        int[] arr = new int[100001];
-        Arrays.fill(arr, Integer.MAX_VALUE);
+        int[] dp = new int[200005];
+        Arrays.fill(dp, 1000000);
 
-        arr[n] = 0;
+        dp[n] = 0;
         for (int i = n - 1; i >= 0; i--) {
-            arr[i] = arr[i + 1] + 1;
+            dp[i] = dp[i + 1] + 1;
         }
 
-        for (int i = n; i < 100000; i++) {
-            int num = i;
-            int count = Math.min(arr[num + 1], Math.min(arr[num], arr[num - 1])) + 1;
-            arr[num] = count;
-            while (num < 100001) {
-                num *= 2;
-                if (num > 100000) break;
-                arr[num] = count;
-            }
+        for (int i = n + 1; i < 200004; i++) {
+            if (i % 2 == 0) dp[i] = Math.min(dp[i / 2], Math.min(dp[i - 1], dp[i + 1]) + 1);
+            else dp[i] = Math.min(dp[i - 1] + 1, dp[i + 1] + 1);
         }
 
-        for (int i = 0; i < 100; i++) {
-            System.out.print(arr[i] + " ");
+        for (int i = n + 1; i < 200004; i++) {
+            if (i % 2 == 0) dp[i] = Math.min(dp[i / 2], Math.min(dp[i - 1], dp[i + 1]) + 1);
+            else dp[i] = Math.min(dp[i - 1] + 1, dp[i + 1] + 1);
         }
+
+        System.out.println(dp[k]);
     }
 }
