@@ -3,7 +3,7 @@ package PCCP.PCCP1_3;
 import java.util.*;
 public class PCCP1_3 {
     public static void main(String[] args) {
-        System.out.println(Solution.solution(new int[][] {{3, 5}, {2, 4}}));
+        System.out.println(Solution.solution(new int[][] {{3, 5}, {2, 4}})[0]);
     }
 }
 
