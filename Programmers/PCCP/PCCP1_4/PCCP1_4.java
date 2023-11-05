@@ -11,7 +11,10 @@ class Solution {
     public long[] solution(int[][] program) {
         long[] answer = new long[11];
         long count = 0;
-        PriorityQueue<Node> pq = new PriorityQueue<Node>();
+        PriorityQueue<Node> pq = new PriorityQueue<Node>((a,b) ->a.time - b.time);
+        PriorityQueue<Node> pq2 = new PriorityQueue<Node>((a,b) ->
+                a.score != b.score ? a.score - b.score : a.time - b.time
+        );
 
         for (int[] e : program) {
             answer[0] += e[2];
@@ -26,7 +29,7 @@ class Solution {
     }
 }
 
-class Node implements Comparable<Node>{
+class Node{
     int score;
     int start;
     int time;
@@ -37,15 +40,6 @@ class Node implements Comparable<Node>{
         this.start = _start;
         this.time = _time;
         this.realStart = 0;
-    }
-
-    @Override
-    public int compareTo(Node o) {
-        if (this.start != o.start) {
-            return Integer.compare(this.start, o.start);
-        } else {
-            return Integer.compare(this.score, o.score);
-        }
     }
 
 }
