@@ -22,11 +22,8 @@ public class Q3986 {
             stack.push(q.poll());
             while (!q.isEmpty()) {
                 char ch = q.poll();
-                if (stack.isEmpty()) {
-                    stack.push(ch);
-                    continue;
-                }
-                if (stack.peek() == ch) {
+
+                if (!stack.isEmpty() && stack.peek() == ch) {
                     stack.pop();
                 } else {
                     stack.push(ch);
