@@ -30,7 +30,7 @@ public class Q17609_2 {
                 }
             }
         }
-        return 0; // 완벽한 회문
+        return 0;
     }
     public static void main(String[] args) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
