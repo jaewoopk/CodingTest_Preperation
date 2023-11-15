@@ -1,4 +1,3 @@
- wrong way
 package SWEA.D3.Q1208;
 
 import java.util.*;
