@@ -16,12 +16,19 @@ public class Q4408 {
             int[] map = new int[201];
             for (int k = 0; k < n; k++) {
                 int[] arr = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-
-                for (int j = arr[0]; j < arr[1] + 1; j += 2) {
-                    map[(int)((j - 0.5 )/ 2)] += 1;
+                if (arr[0] > arr[1]) {
+                    int tmp = arr[0];
+                    arr[0] = arr[1];
+                    arr[1] = tmp;
                 }
-                for (int j = arr[0]; j > arr[1] - 1; j -= 2) {
-                    map[(int)((j - 0.5 )/ 2)] += 1;
+                if (arr[0] % 2 == 1) {
+                    for (int j = arr[0]; j < arr[1] + 1; j += 2) {
+                        map[(int)((j - 0.5 )/ 2)] += 1;
+                    }
+                } else {
+                    for (int j = arr[0]; j < arr[1] + 2; j += 2) {
+                        map[(int)((j - 0.5 )/ 2)] += 1;
+                    }
                 }
             }
             Arrays.sort(map);
