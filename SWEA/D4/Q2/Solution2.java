@@ -1,4 +1,4 @@
-package SWEA.SSAFY11;
+package SWEA.D4.Q2;
 
 import java.util.*;
 import java.io.*;
