@@ -16,7 +16,7 @@ public class Solution2 {
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             int[] arr = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-            HashMap<Integer, Integer> map = new HashMap<>();
+            Map<Integer, Integer> map = new TreeMap<>();
 
             for (int e : arr) {
                 map.computeIfAbsent(e, k -> 0);
@@ -26,6 +26,7 @@ public class Solution2 {
 
             int count = 0;
             for (int e : map.keySet()) {
+                System.out.print(e + " ");
                 if (count == 0 || count == map.size() - 1) {
                     count++;
                     continue;
@@ -33,6 +34,7 @@ public class Solution2 {
                 tmp[count - 1] = map.get(e);
                 count++;
             }
+            System.out.println();
             int max = 0;
             if (tmp.length == 1) {
                 max = tmp[0];
@@ -48,8 +50,18 @@ public class Solution2 {
                 max = Math.max(max, sum);
             }
             max = Math.max(max, tmp[tmp.length - 1]);
-
-            System.out.println("#" + i + " " + max);
+            if (max < a) {
+                System.out.println("#" + i + " " + 0);
+            } else {
+                System.out.println("#" + i + " " + max);
+            }
         }
     }
 }
+//3
+//16 1 4
+//9 16 8 7 3 3 7 6 8 3 5 2 3 8 13 1
+//6 5 10
+//1 1 1 1 3 4
+//6 2 4
+//1 1 2 2 3 3
