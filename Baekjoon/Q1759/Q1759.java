@@ -6,17 +6,14 @@ import java.io.*;
 public class Q1759 {
     static int l, c;
     static char[] arr;
-    static Character[] chArr;
-    static int[] isVowel;
-    static boolean[] visited;
-    public static void getIsVowel() {
+    static char[] chArr;
+    static boolean[] isVowel;
+    public static boolean[] getIsVowel() {
+        boolean[] tmp = new boolean[c];
         for (int i = 0; i < c; i++) {
-            if (chArr[i] == 'a' || chArr[i] == 'e' || chArr[i] == 'i' || chArr[i] == 'o' || chArr[i] == 'u') {
-                isVowel[i] = 1;
-            } else {
-                isVowel[i] = 0;
-            }
+            tmp[i] = chArr[i] == 'a' || chArr[i] == 'e' || chArr[i] == 'i' || chArr[i] == 'o' || chArr[i] == 'u';
         }
+        return tmp;
     }
     public static void dfs(int idx, int x, int vowel, int cons) {
         if (idx == l) {
@@ -29,15 +26,11 @@ public class Q1759 {
             return;
         }
         for (int i = x + 1; i < c; i++) {
-            if (!visited[i]) {
-                visited[i] = true;
-                arr[idx] = chArr[i];
-                if (isVowel[i] == 1) {
-                    dfs(idx + 1, i, vowel + 1, cons);
-                } else {
-                    dfs(idx + 1, i, vowel, cons + 1);
-                }
-                visited[i] = false;
+            arr[idx] = chArr[i];
+            if (isVowel[i]) {
+                dfs(idx + 1, i, vowel + 1, cons);
+            } else {
+                dfs(idx + 1, i, vowel, cons + 1);
             }
         }
     }
@@ -48,16 +41,11 @@ public class Q1759 {
         l = Integer.parseInt(st.nextToken());
         c = Integer.parseInt(st.nextToken());
 
-        chArr = br.readLine().replaceAll(" ", "")
-                             .chars()
-                             .mapToObj(c -> (char) c)
-                             .toArray(Character[]::new);
+        chArr = br.readLine().replaceAll(" ", "").toCharArray();
 
         Arrays.sort(chArr);
-        isVowel = new int[c];
-        getIsVowel();
+        isVowel = getIsVowel();
         arr = new char[l];
-        visited = new boolean[c];
 
         dfs(0, -1, 0, 0);
 
