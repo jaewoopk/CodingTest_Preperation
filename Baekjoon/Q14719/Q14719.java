@@ -25,23 +25,29 @@ public class Q14719 {
             boolean leftChecker = false;
             int leftIdx = 0;
             for (int j = 0; j < m; j++) {
-                if (j != m - 1 && board[i][j] == 1 && board[i][j + 1] == 0) {
+                if (j != m - 1 && !leftChecker && board[i][j] == 1 && board[i][j + 1] == 0) {
                     leftChecker = true;
                     leftIdx = j;
                 } else if (j != 0 && leftChecker && board[i][j] == 1 && board[i][j - 1] == 0) {
                     for (int k = leftIdx + 1; k < j; k++) {
                         board[i][k] = 2;
                     }
+                    leftChecker = false;
+                    j--;
+                    continue;
                 }
             }
         }
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
+//                System.out.print(board[i][j] + " ");
                 if (board[i][j] == 2) {
                     count++;
                 }
             }
+//            System.out.println();
         }
         System.out.println(count);
     }
 }
+
