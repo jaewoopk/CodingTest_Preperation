@@ -16,14 +16,20 @@ public class Solution2 {
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             int[] arr = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-            Map<Integer, Integer> map = new TreeMap<>();
+            TreeMap<Integer, Integer> map = new TreeMap<>();
 
             for (int e : arr) {
                 map.computeIfAbsent(e, k -> 0);
                 map.put(e, map.get(e) + 1);
             }
-            int[] tmp = new int[map.size() - 2];
 
+            System.out.println(map);
+            map.pollFirstEntry();
+            map.pollLastEntry();
+
+            Integer[] x = map.values().toArray(new Integer[0]);
+            System.out.println(Arrays.toString(x));
+            int[] tmp = new int[map.size() - 2];
             int count = 0;
             for (int e : map.keySet()) {
                 System.out.print(e + " ");
